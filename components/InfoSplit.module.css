@@ -1,0 +1,53 @@
+.wrap {
+  position: relative;
+  overflow: hidden;
+  /* Keeps blend modes predictable so the image composites against cream, not the body */
+  isolation: isolate;
+  background: var(--cream);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.visual {
+  position: relative;
+  min-height: 0;
+  background: var(--cream);
+}
+
+.photo {
+  display: block;
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  margin-inline: auto;
+  /* Light / off-white pixels in the PNG take the cream behind the image instead of a separate “card” */
+  mix-blend-mode: darken;
+}
+
+.copy {
+  min-width: 0;
+}
+
+.h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.45rem, 2.6vw, 2rem);
+}
+
+.cta {
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photo {
+    max-width: min(400px, 100%);
+  }
+}

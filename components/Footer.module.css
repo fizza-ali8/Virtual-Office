@@ -1,0 +1,159 @@
+.footer {
+  padding-block: 2.5rem 1.75rem;
+  background: #fff;
+  border-top: 1px solid var(--border);
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1.2fr repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  margin-bottom: 0.65rem;
+}
+
+.logoMark {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--black);
+  color: var(--yellow);
+  display: grid;
+  place-items: center;
+}
+
+.tagline {
+  margin: 0;
+  color: var(--gray-600);
+  font-size: 0.92rem;
+  max-width: 32ch;
+}
+
+.colTitle {
+  margin: 0 0 0.75rem;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray-600);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.45rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.list a:hover {
+  text-decoration: underline;
+}
+
+.newsHint {
+  margin: 0 0 0.65rem;
+  color: var(--gray-600);
+  font-size: 0.9rem;
+}
+
+.form {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.input {
+  flex: 1 1 180px;
+  padding: 0.7rem 0.85rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  font: inherit;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin-block: 1.75rem 1.25rem;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.copy {
+  margin: 0;
+  color: var(--gray-600);
+  font-size: 0.88rem;
+}
+
+.social {
+  display: flex;
+  gap: 0.65rem;
+}
+
+.social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 0.78rem;
+}
+
+.social a:hover {
+  background: var(--cream);
+}
+
+@media (max-width: 900px) {
+  .top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .top {
+    grid-template-columns: 1fr;
+  }
+
+  .form {
+    flex-direction: column;
+  }
+
+  .form :global(.btn) {
+    width: 100%;
+  }
+
+  .bottom {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .copy {
+    width: 100%;
+  }
+}

@@ -1,0 +1,118 @@
+.intro {
+  max-width: 720px;
+  margin-bottom: 2rem;
+}
+
+.h2 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.45rem, 2.6vw, 2rem);
+}
+
+.lead {
+  margin: 0;
+  font-size: 1.02rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.heroImg {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroImg .cover {
+  max-height: min(56vh, 520px);
+  object-position: center;
+}
+
+.thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.65rem;
+}
+
+.thumb {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  aspect-ratio: 16 / 10;
+}
+
+.thumb .cover {
+  height: 100%;
+}
+
+.card {
+  border-radius: 20px;
+  padding: 1.35rem 1.25rem;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, #fff, #fffdf7);
+  max-width: 560px;
+}
+
+.cardTitle {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+}
+
+.dl {
+  margin: 0;
+}
+
+.dl > div + div {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.dl dt {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gray-600);
+  margin-bottom: 0.25rem;
+}
+
+.dl dd {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+@media (max-width: 960px) {
+  .thumbs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .thumbs {
+    grid-template-columns: 1fr;
+  }
+
+  .heroImg {
+    border-radius: 14px;
+  }
+
+  .card {
+    border-radius: 14px;
+    padding: 1.05rem 0.95rem;
+  }
+
+  .dl dd {
+    font-size: 0.94rem;
+  }
+}
