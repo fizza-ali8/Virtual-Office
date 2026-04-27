@@ -62,10 +62,14 @@
   margin: 0;
   padding: 0;
   display: flex;
-  gap: clamp(0.75rem, 1.8vw, 1.15rem);
+  align-items: center;
+  gap: clamp(1rem, 2.3vw, 1.6rem);
 }
 
 .link {
+  border: 0;
+  background: transparent;
+  font-family: inherit;
   font-weight: 600;
   font-size: 0.92rem;
   opacity: 0.85;
@@ -107,10 +111,63 @@
   transform-origin: left;
 }
 
+.dropdown {
+  position: relative;
+}
+
+.dropdownToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: default;
+}
+
+.dropdownMenu {
+  list-style: none;
+  margin: 0;
+  padding: 0.45rem;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  min-width: 248px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 14px 36px rgba(10, 10, 10, 0.11);
+  display: grid;
+  gap: 0.2rem;
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 54;
+}
+
+.dropdown:hover .dropdownMenu,
+.dropdown:focus-within .dropdownMenu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdownLink {
+  display: block;
+  padding: 0.55rem 0.65rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--black);
+}
+
+.dropdownLink:hover {
+  background: var(--cream);
+}
+
 .link:focus-visible,
 .menuBtn:focus-visible,
 .mobileClose:focus-visible,
-.buyBtn:focus-visible {
+.buyBtn:focus-visible,
+.dropdownLink:focus-visible {
   outline: 2px solid rgba(255, 214, 10, 0.9);
   outline-offset: 3px;
 }
@@ -211,7 +268,7 @@
   }
 
   .links {
-    gap: 0.75rem;
+    gap: 1rem;
   }
 
   .link {
@@ -285,6 +342,30 @@
   .links {
     flex-direction: column;
     gap: 0.15rem;
+    align-items: stretch;
+  }
+
+  .dropdownMenu {
+    position: static;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    min-width: 0;
+    border: 0;
+    box-shadow: none;
+    padding: 0.25rem 0 0.4rem 0.85rem;
+    background: transparent;
+    gap: 0.12rem;
+  }
+
+  .dropdownLink {
+    padding: 0.45rem 0.25rem;
+    border-radius: 8px;
+    font-size: 0.84rem;
+  }
+
+  .dropdownLink:hover {
+    background: rgba(255, 214, 10, 0.15);
   }
 
   .link {

@@ -10,7 +10,7 @@ export function CTABanner() {
           Join a business support programme for founder essentials — formations help, compliance pointers, and
           referrals when you need specialist expertise.
         </p>
-        <a href="#contact" className={`btn btn-primary ${styles.btn}`}>
+        <a href="/contact" className={`btn btn-primary ${styles.btn}`}>
           Get in touch now
         </a>
       </div>

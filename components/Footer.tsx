@@ -1,5 +1,6 @@
 import { NewsletterForm } from "@/components/NewsletterForm";
 import { RevealSection } from "@/components/motion/RevealSection";
+import Link from "next/link";
 import styles from "./Footer.module.css";
 
 export function Footer() {
@@ -7,23 +8,26 @@ export function Footer() {
     <RevealSection as="footer" className={styles.footer}>
       <div className={`container ${styles.top}`}>
         <div>
-          <a href="#" className={styles.logo}>
-            <span className={styles.logoMark}>S</span>
+          <Link href="/" className={styles.logo}>
+            <span className={styles.logoMark}>V</span>
             <span>Virtual Office</span>
-          </a>
-          <p className={styles.tagline}>Manchester virtual office — professional address, flexible mail, real support.</p>
+          </Link>
+          <p className={styles.tagline}>Virtual office — professional address, flexible mail, real support.</p>
         </div>
         <div>
           <h3 className={styles.colTitle}>Quick links</h3>
           <ul className={styles.list}>
             <li>
-              <a href="#">Help</a>
+              <Link href="/">Home</Link>
             </li>
             <li>
-              <a href="#">Terms</a>
+              <Link href="/about">About</Link>
             </li>
             <li>
-              <a href="#">Privacy</a>
+              <Link href="/faqs">FAQs</Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
         </div>
@@ -31,13 +35,30 @@ export function Footer() {
           <h3 className={styles.colTitle}>Our services</h3>
           <ul className={styles.list}>
             <li>
-              <a href="#packages">Virtual office</a>
+              <Link href="/virtual-office">Virtual Office</Link>
             </li>
             <li>
-              <a href="#services">Business services</a>
+              <Link href="/registered-office-address">Registered Office Address</Link>
             </li>
             <li>
-              <a href="#faq">FAQs</a>
+              <Link href="/directors-service-address">Director&apos;s Service Address</Link>
+            </li>
+            <li>
+              <Link href="/services">All Services</Link>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 className={styles.colTitle}>Legal</h3>
+          <ul className={styles.list}>
+            <li>
+              <a href="/privacy-policy">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="/terms">Terms &amp; Conditions</a>
+            </li>
+            <li>
+              <a href="/cookie-policy">Cookie Policy</a>
             </li>
           </ul>
         </div>

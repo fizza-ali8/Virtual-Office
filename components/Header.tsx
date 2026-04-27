@@ -1,68 +1,33 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { useEffect, useState } from "react";
 import styles from "./Header.module.css";
 
 const links = [
-  { href: "#top", label: "Home" },
-  { href: "#virtual-office", label: "Virtual Office" },
-  { href: "#services", label: "Business Services" },
-  { href: "#contact", label: "Contact Us" },
+  { href: "/about", label: "About" },
+  { href: "/faqs", label: "FAQs" },
+  { href: "/contact", label: "Contact" },
+];
+
+const serviceLinks = [
+  { href: "/virtual-office", label: "Virtual Office Address" },
+  { href: "/registered-office-address", label: "Registered Office Address" },
+  { href: "/directors-service-address", label: "Director's Service Address" },
+  { href: "/services", label: "All Services" },
 ];
 
 export function Header() {
   const [open, setOpen] = useState(false);
   const [elevated, setElevated] = useState(false);
-  const [active, setActive] = useState("#top");
   const { scrollY } = useScroll();
+  const pathname = usePathname();
 
   useMotionValueEvent(scrollY, "change", (y) => {
     setElevated(y > 12);
   });
-
-  useEffect(() => {
-    const sectionSelectors = links
-      .map((l) => l.href)
-      .filter((href) => href.startsWith("#") && href.length > 1);
-
-    const sections = sectionSelectors
-      .map((href) => {
-        try {
-          return document.querySelector(href);
-        } catch {
-          return null;
-        }
-      })
-      .filter((el): el is Element => el !== null);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible?.target?.id) {
-          setActive(`#${visible.target.id}`);
-        }
-      },
-      { threshold: [0.35, 0.55], rootMargin: "-38% 0px -42% 0px" }
-    );
-
-    const onScroll = () => {
-      if (typeof window !== "undefined" && window.scrollY < 72) {
-        setActive("#top");
-      }
-    };
-
-    sections.forEach((s) => observer.observe(s));
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-
-    return () => {
-      observer.disconnect();
-      window.removeEventListener("scroll", onScroll);
-    };
-  }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -83,10 +48,10 @@ export function Header() {
   return (
     <header className={`${styles.header} ${elevated ? styles.elevated : ""}`}>
       <div className={`container ${styles.inner}`}>
-        <a href="#top" className={styles.logo} aria-label="Virtual Office home">
+        <Link href="/" className={styles.logo} aria-label="Virtual Office home">
           <span className={styles.logoMark}>V</span>
           <span className={styles.logoText}>Virtual Office</span>
-        </a>
+        </Link>
 
         <nav
           id="site-nav"
@@ -100,25 +65,58 @@ export function Header() {
             </button>
           </div>
           <ul className={styles.links}>
+            <li>
+              <Link
+                href="/"
+                className={`${styles.link} ${pathname === "/" ? styles.linkActive : ""}`}
+                aria-current={pathname === "/" ? "page" : undefined}
+                onClick={() => setOpen(false)}
+              >
+                Home
+              </Link>
+            </li>
+            <li className={styles.dropdown}>
+              <Link
+                href="/services"
+                className={`${styles.link} ${styles.dropdownToggle} ${pathname === "/services" ? styles.linkActive : ""}`}
+                onClick={() => setOpen(false)}
+              >
+                Services
+                <span aria-hidden>▾</span>
+              </Link>
+              <ul className={styles.dropdownMenu}>
+                {serviceLinks.map((l) => (
+                  <li key={l.href}>
+                    <Link
+                      href={l.href}
+                      className={`${styles.dropdownLink} ${pathname === l.href ? styles.linkActive : ""}`}
+                      onClick={() => setOpen(false)}
+                    >
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </li>
             {links.map((l) => (
               <li key={l.label}>
-                <a
+                <Link
                   href={l.href}
-                  className={`${styles.link} ${active === l.href ? styles.linkActive : ""}`}
-                  aria-current={active === l.href ? "page" : undefined}
+                  className={`${styles.link} ${pathname === l.href ? styles.linkActive : ""}`}
+                  aria-current={pathname === l.href ? "page" : undefined}
                   onClick={() => setOpen(false)}
                 >
                   {l.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
         </nav>
 
         <div className={styles.actions}>
-          <a href="#packages" className={`btn btn-primary ${styles.buyBtn}`}>
+          <Link href="/#packages" className={`btn btn-primary ${styles.buyBtn}`}>
             Buy now
-          </a>
+          </Link>
           <button
             type="button"
             className={styles.menuBtn}

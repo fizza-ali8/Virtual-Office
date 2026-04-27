@@ -14,9 +14,9 @@ export function LocationSection() {
     <RevealSection className="section" id="location">
       <div className="container">
         <div className={styles.intro}>
-          <h2 className={styles.h2}>A look inside our Manchester address</h2>
+          <h2 className={styles.h2}>A look inside our business address</h2>
           <p className={`muted ${styles.lead}`}>
-            Your virtual office sits in the heart of Manchester — one of the UK&apos;s most vibrant cities.
+            Your virtual office sits in a central, well-connected location designed for modern businesses.
             At Bartle House, you benefit from a striking Georgian-style building, manned reception, meeting
             rooms, and professional neighbours.
           </p>
@@ -54,7 +54,7 @@ export function LocationSection() {
                 <dd>
                   Bartle House,
                   <br />
-                  Oxford Court, Manchester
+                  Oxford Court
                   <br />
                   M2 3WQ
                 </dd>

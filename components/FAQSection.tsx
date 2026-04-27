@@ -25,7 +25,7 @@ const faqData: Record<
   buy: [
     {
       q: "What is included in a virtual office package?",
-      a: "You receive a professional Manchester address suitable for registration and marketing, plus mail handling according to your tier — including digital forwarding limits that scale with Professional and Premium.",
+      a: "You receive a professional business address suitable for registration and marketing, plus mail handling according to your tier — including digital forwarding limits that scale with Professional and Premium.",
     },
     {
       q: "Can I switch between monthly and annual billing?",

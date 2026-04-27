@@ -15,9 +15,9 @@ const body = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Virtual Office | Virtual Office",
+  title: "Virtual Office Address | Virtual Office",
   description:
-    "Build trust and protect privacy with a virtual office. Professional address, mail handling, and meeting rooms.",
+    "Professional virtual office address with mail handling, privacy protection, and flexible plans.",
 };
 
 export default function RootLayout({

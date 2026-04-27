@@ -1,0 +1,79 @@
+.form {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.42rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #202020;
+}
+
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  font: inherit;
+  font-weight: 500;
+  border: 1px solid rgba(10, 10, 10, 0.12);
+  border-radius: 12px;
+  padding: 0.78rem 0.9rem;
+  background: #fff;
+  color: #1b1b1b;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.field input:hover,
+.field textarea:hover,
+.field select:hover {
+  border-color: rgba(255, 214, 10, 0.65);
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible,
+.field select:focus-visible {
+  outline: none;
+  border-color: rgba(255, 214, 10, 0.95);
+  box-shadow: 0 0 0 3px rgba(255, 214, 10, 0.2);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 132px;
+}
+
+.form :global(.btn) {
+  margin-top: 0.35rem;
+  width: 100%;
+  font-weight: 700;
+  box-shadow: 0 8px 22px rgba(255, 214, 10, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form :global(.btn:hover) {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 12px 28px rgba(255, 214, 10, 0.43);
+}
+
+.note {
+  margin: 0.2rem 0 0;
+  color: #687180;
+  font-size: 0.83rem;
+  line-height: 1.55;
+}
+
+.success {
+  margin: 0;
+  color: #1f7a3d;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.error {
+  margin: 0;
+  color: #b42318;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
