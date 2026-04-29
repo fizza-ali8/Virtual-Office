@@ -4,8 +4,6 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { InfoSplit } from "@/components/InfoSplit";
 import { LocationSection } from "@/components/LocationSection";
-import { PricingSection } from "@/components/PricingSection";
-import { ProcessSteps } from "@/components/ProcessSteps";
 import styles from "@/app/service-pages.module.css";
 
 export const metadata: Metadata = {
@@ -13,11 +11,11 @@ export const metadata: Metadata = {
 };
 
 const quickFaqs = [
-  ["How long until I can start using my address?", "Typically 1–2 business days after verification."],
-  ["Can I use this address for Companies House?", "Yes, it is fully compliant as a registered office address."],
-  ["Do I need to visit the office location?", "No. Everything is managed online and digitally."],
-  ["Can I cancel if my business grows?", "Yes, cancel with 30 days' notice and no penalties."],
-  ["Is this address used by other businesses too?", "Yes, like serviced offices, multiple businesses use this commercial address."],
+  ["Can I use this as my main business address?", "Yes. You can use it on your website, invoices, and client-facing materials."],
+  ["What happens if mail arrives in my personal name?", "We process both company-name and named-director mail linked to your account."],
+  ["Can I upgrade my plan if my mail volume grows?", "Yes. You can move between plans as your business needs change."],
+  ["Can I book meeting rooms without a long-term contract?", "Yes. Rooms are available by the hour or day, subject to availability."],
+  ["Is this suitable if I work internationally?", "Yes. Many clients operate remotely and manage everything digitally."],
 ];
 
 export default function VirtualOfficeManchesterPage() {
@@ -28,10 +26,10 @@ export default function VirtualOfficeManchesterPage() {
         <section className={styles.hero}>
           <div className={`container ${styles.heroInner}`}>
             <p className={styles.eyebrow}>Virtual office address</p>
-            <h1 className={styles.h1}>Virtual Office Address from £9.99 + VAT</h1>
+            <h1 className={styles.h1}>A professional business address, digital mail handling, and real meeting rooms</h1>
             <p className={styles.lead}>
-              Work anywhere. Impress clients. Manage mail — affordably and without compromise. Get a prestigious
-              professional business address today.
+              Work from anywhere while your business looks established from day one. Use one premium address, never miss
+              an important letter, and meet clients in a real office setting when needed.
             </p>
             <div className={styles.chips}>
               <span className={styles.chip}>Trusted by 10,000+ businesses</span>
@@ -40,7 +38,7 @@ export default function VirtualOfficeManchesterPage() {
             </div>
             <div className={styles.ctaRow}>
               <Link href="/#packages" className="btn btn-primary">
-                View packages
+                Start your virtual office
               </Link>
               <Link href="/#process" className="btn btn-outline">
                 How it works
@@ -56,16 +54,23 @@ export default function VirtualOfficeManchesterPage() {
           <div className={`container ${styles.panel}`}>
             <h2 className={styles.h2}>What is a virtual office?</h2>
             <p className={styles.text}>
-              A virtual office gives your business a professional address at a real location without requiring a
-              physical office rental.
+              A virtual office gives you the three things most growing businesses need: a credible business address, a
+              reliable mail workflow, and flexible meeting space without paying for full-time office rent.
             </p>
-            <p className={styles.text}>
-              With our virtual office service, Bartle House becomes your official business address. Mail is
-              received, scanned, and forwarded to you digitally.
-            </p>
-            <p className={styles.text}>
-              Need face-to-face meetings? You can book professional meeting rooms by the hour or day.
-            </p>
+            <div className={styles.grid3} style={{ marginTop: "0.85rem" }}>
+              <article className={styles.card}>
+                <h3 className={styles.cardTitle}>📍 Address</h3>
+                <p className={styles.cardText}>Use a commercial address across your brand touchpoints.</p>
+              </article>
+              <article className={styles.card}>
+                <h3 className={styles.cardTitle}>📮 Mail</h3>
+                <p className={styles.cardText}>Mail is received, logged, scanned, and forwarded digitally.</p>
+              </article>
+              <article className={styles.card}>
+                <h3 className={styles.cardTitle}>🗓️ Space</h3>
+                <p className={styles.cardText}>Book meeting rooms when you need in-person client meetings.</p>
+              </article>
+            </div>
           </div>
         </section>
 
@@ -74,20 +79,47 @@ export default function VirtualOfficeManchesterPage() {
             <h2 className={styles.h2}>Why a professional business address?</h2>
             <div className={styles.grid3}>
               <article className={styles.card}>
-                <h3 className={styles.cardTitle}>🏙️ UK&apos;s second city</h3>
+                <h3 className={styles.cardTitle}>🏙️ Stronger first impression</h3>
                 <p className={styles.cardText}>
                   A premium business address adds instant credibility with clients and partners.
                 </p>
+                <p className={styles.proof}>Proof: used on your proposals, invoices, and onboarding documents.</p>
               </article>
               <article className={styles.card}>
-                <h3 className={styles.cardTitle}>📍 Prestigious M2 postcode</h3>
+                <h3 className={styles.cardTitle}>📍 Better mail control</h3>
                 <p className={styles.cardText}>Oxford Court in M2 places your business in a respected commercial district.</p>
+                <p className={styles.proof}>Proof: scan alerts are sent within one business day.</p>
               </article>
               <article className={styles.card}>
-                <h3 className={styles.cardTitle}>🏛️ Real building</h3>
+                <h3 className={styles.cardTitle}>🏛️ Real building support</h3>
                 <p className={styles.cardText}>
                   Bartle House is a genuine staffed commercial building with meeting spaces.
                 </p>
+                <p className={styles.proof}>Proof: you can host meetings in bookable rooms on site.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container">
+            <h2 className={styles.h2}>Who uses a virtual office?</h2>
+            <div className={styles.grid4}>
+              <article className={styles.card}>
+                <h3 className={styles.cardTitle}>Freelancers</h3>
+                <p className={styles.cardText}>Look established without renting a private office.</p>
+              </article>
+              <article className={styles.card}>
+                <h3 className={styles.cardTitle}>Startups</h3>
+                <p className={styles.cardText}>Use a business-ready address while controlling burn rate.</p>
+              </article>
+              <article className={styles.card}>
+                <h3 className={styles.cardTitle}>Remote teams</h3>
+                <p className={styles.cardText}>Operate distributed while keeping one central business identity.</p>
+              </article>
+              <article className={styles.card}>
+                <h3 className={styles.cardTitle}>Overseas founders</h3>
+                <p className={styles.cardText}>Build a UK presence with compliant address support.</p>
               </article>
             </div>
           </div>
@@ -114,17 +146,52 @@ export default function VirtualOfficeManchesterPage() {
 
         <InfoSplit />
 
-        <section className="section">
+        <section id="process" className="section">
           <div className="container">
-            <h2 className={styles.h2}>Choose your virtual office plan</h2>
-            <p className={styles.text}>
-              No setup fees. No fixed contracts. Cancel any time. Pay monthly or save with annual billing.
-            </p>
+            <h2 className={styles.h2}>How it works</h2>
+            <div className={styles.stepGrid}>
+              <article className={styles.stepCard}>
+                <span className={styles.stepNumber}>1</span>
+                <h3 className={styles.cardTitle}>Pick your package</h3>
+                <p className={styles.cardText}>Choose the plan that matches your current mail needs.</p>
+              </article>
+              <article className={styles.stepCard}>
+                <span className={styles.stepNumber}>2</span>
+                <h3 className={styles.cardTitle}>Complete verification</h3>
+                <p className={styles.cardText}>Submit quick checks so your service can be activated compliantly.</p>
+              </article>
+              <article className={styles.stepCard}>
+                <span className={styles.stepNumber}>3</span>
+                <h3 className={styles.cardTitle}>Go live with your address</h3>
+                <p className={styles.cardText}>Start using your business address across your public channels.</p>
+              </article>
+              <article className={styles.stepCard}>
+                <span className={styles.stepNumber}>4</span>
+                <h3 className={styles.cardTitle}>Manage mail digitally</h3>
+                <p className={styles.cardText}>Receive scans, forward items, and upgrade when your volume grows.</p>
+              </article>
+            </div>
           </div>
-          <PricingSection />
         </section>
 
-        <ProcessSteps />
+        <section className="section">
+          <div className={`container ${styles.focusCard}`}>
+            <h2 className={styles.h2}>Virtual Office package</h2>
+            <p className={styles.focusPrice}>From £9.99/month + VAT</p>
+            <p className={styles.text}>
+              Includes a business address plus compliance-ready address support. Mail handling limits scale with your
+              selected plan.
+            </p>
+            <div className={styles.ctaRow}>
+              <Link href="/#packages" className="btn btn-primary">
+                Compare plans and start
+              </Link>
+              <Link href="/services" className="btn btn-outline">
+                See full service comparison
+              </Link>
+            </div>
+          </div>
+        </section>
 
         <section className="section">
           <div className="container">
@@ -144,14 +211,15 @@ export default function VirtualOfficeManchesterPage() {
           <div className={`container ${styles.footerCta}`}>
             <h2 className={styles.h2}>Get your virtual office today</h2>
             <p className={styles.text}>
-              Join thousands of businesses who trust us with their registered address. Plans from £9.99/month + VAT.
+              Plans start from £9.99/month + VAT with no setup fees. Need only compliance cover? See our standalone
+              registered office service.
             </p>
             <div className={styles.ctaRow}>
               <Link href="/#packages" className="btn btn-primary">
-                Start today
+                Start your virtual office
               </Link>
-              <Link href="/contact" className="btn btn-outline">
-                Got questions?
+              <Link href="/registered-office-address" className="btn btn-outline">
+                Need only registered office?
               </Link>
             </div>
           </div>
