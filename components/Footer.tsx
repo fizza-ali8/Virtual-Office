@@ -1,11 +1,10 @@
 import { NewsletterForm } from "@/components/NewsletterForm";
-import { RevealSection } from "@/components/motion/RevealSection";
 import Link from "next/link";
 import styles from "./Footer.module.css";
 
 export function Footer() {
   return (
-    <RevealSection as="footer" className={styles.footer}>
+    <footer className={styles.footer}>
       <div className={`container ${styles.top}`}>
         <div>
           <Link href="/" className={styles.logo}>
@@ -83,6 +82,6 @@ export function Footer() {
           </a>
         </div>
       </div>
-    </RevealSection>
+    </footer>
   );
 }

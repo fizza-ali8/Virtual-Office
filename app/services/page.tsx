@@ -16,64 +16,72 @@ export default function ServicesPage() {
         <section className={styles.hero}>
           <div className={`container ${styles.heroInner}`}>
             <p className={styles.eyebrow}>Services overview</p>
-            <h1 className={styles.h1}>Everything your business needs to look professional</h1>
+            <h1 className={styles.h1}>Not sure which service your business needs? Start here.</h1>
             <p className={styles.lead}>
-              From a registered office address to mail handling, meeting rooms, and more — we give your business the
-              professional presence it deserves from a single business address.
+              Virtual office, registered office, and director&apos;s service address can sound similar. This page helps
+              you pick the right option in under a minute.
             </p>
-            <div className={styles.chips}>
-              <span className={styles.chip}>No setup fees</span>
-              <span className={styles.chip}>Same-day scanning</span>
-              <span className={styles.chip}>30-day cancellation</span>
+            <div className={styles.trustBar}>
+              <p className={styles.trustItem}>10,000+ businesses served</p>
+              <p className={styles.trustItem}>Companies House compliant setup</p>
+              <p className={styles.trustItem}>No setup fees or fixed contracts</p>
+            </div>
+            <div className={styles.ctaRow}>
+              <Link href="/#packages" className="btn btn-primary">
+                Compare all plans
+              </Link>
             </div>
           </div>
         </section>
 
         <section className={`section ${styles.sectionSoft}`}>
+          <div className="container" style={{ marginBottom: "1rem" }}>
+            <h2 className={styles.h2}>Which service is right for me?</h2>
+          </div>
           <div className={`container ${styles.grid2}`}>
             <article className={styles.card}>
-              <h3 className={styles.cardTitle}>🏢 Virtual Office Address</h3>
+              <h3 className={styles.cardTitle}>🏢 I want a professional address for my brand presence</h3>
               <p className={styles.cardText}>
-                Get a real business address in a central commercial location. Use it on your website, email signatures,
-                and marketing materials with digital mail forwarding built in.
+                Use one commercial address across your website, email signatures, and client communication, with digital
+                mail handling included.
               </p>
               <ul className={styles.list}>
-                <li>City-centre address for daily credibility</li>
-                <li>Digital mail handling included</li>
-                <li>Flexible monthly or annual billing</li>
+                <li>Best for freelancers, startups, and remote teams</li>
+                <li>Professional address plus business mail handling</li>
+                <li>Meeting room access when needed</li>
               </ul>
               <Link className={styles.cardLink} href="/virtual-office">
-                Learn more →
+                Start your virtual office →
               </Link>
             </article>
             <article className={styles.card}>
-              <h3 className={styles.cardTitle}>📋 Registered Office Address</h3>
+              <h3 className={styles.cardTitle}>📋 I need a Companies House registered office</h3>
               <p className={styles.cardText}>
-                Protect your home address and stay compliant with Companies House using a real address at Bartle
-                House.
+                Meet your legal company requirement with a compliant registered office address and keep your home
+                details private.
               </p>
               <ul className={styles.list}>
-                <li>Accepted by Companies House and HMRC</li>
-                <li>Keeps residential address private</li>
-                <li>Ideal for new and growing companies</li>
+                <li>Official HMRC and Companies House correspondence cover</li>
+                <li>Best for limited companies and LLPs</li>
+                <li>Fast setup with clear filing guidance</li>
               </ul>
               <Link className={styles.cardLink} href="/registered-office-address">
-                Learn more →
+                Set your registered office →
               </Link>
             </article>
             <article className={styles.card}>
-              <h3 className={styles.cardTitle}>👔 Director&apos;s Service Address</h3>
+              <h3 className={styles.cardTitle}>👔 My home address is public on Companies House</h3>
               <p className={styles.cardText}>
-                Keep your personal residential address off the public register while staying compliant with UK company
-                law.
+                Replace your personal home details on public filings with a director service address that keeps your
+                privacy protected.
               </p>
               <ul className={styles.list}>
-                <li>Director privacy on public filings</li>
-                <li>Fast switch support and onboarding</li>
-                <li>Works with registered office setup</li>
+                <li>Director-level privacy on the public register</li>
+                <li>Ideal for home-based directors</li>
+                <li>Works alongside your registered office setup</li>
               </ul>
               <Link className={styles.cardLink} href="/directors-service-address">
-                Learn more →
+                Protect my home address →
               </Link>
             </article>
             <article className={styles.card}>
@@ -88,7 +96,7 @@ export default function ServicesPage() {
                 <li>Simple dashboard-friendly workflow</li>
               </ul>
               <Link className={styles.cardLink} href="/#packages">
-                View plans →
+                Compare mail limits →
               </Link>
             </article>
           </div>
@@ -160,6 +168,12 @@ export default function ServicesPage() {
                 </thead>
                 <tbody>
                   <tr>
+                    <td>Best for</td>
+                    <td>Core compliance and light mail</td>
+                    <td className={styles.highlightCol}>Growing businesses</td>
+                    <td>High-mail operations</td>
+                  </tr>
+                  <tr>
                     <td>Registered + Director&apos;s address</td>
                     <td>✅</td>
                     <td className={styles.highlightCol}>✅</td>
@@ -188,7 +202,7 @@ export default function ServicesPage() {
             </div>
             <div className={styles.ctaRow}>
               <Link href="/#packages" className="btn btn-primary">
-                View and order plans
+                Compare all plans
               </Link>
             </div>
             <p className={styles.text}>All prices + VAT. No setup fees. Cancel anytime.</p>
@@ -198,13 +212,16 @@ export default function ServicesPage() {
         <section className="section">
           <div className={`container ${styles.footerCta}`}>
             <h2 className={styles.h2}>Not sure which service fits your business?</h2>
-            <p className={styles.text}>Tell us your setup and we&apos;ll recommend the right package in one reply.</p>
+            <p className={styles.text}>
+              Tell us your setup and we&apos;ll recommend the right package in one reply. You can also check our full
+              FAQ library for quick answers before ordering.
+            </p>
             <div className={styles.ctaRow}>
               <Link href="/contact" className="btn btn-dark">
                 Talk to us
               </Link>
-              <Link href="/#packages" className="btn btn-primary">
-                View packages
+              <Link href="/faqs" className="btn btn-outline">
+                Visit FAQs
               </Link>
             </div>
           </div>

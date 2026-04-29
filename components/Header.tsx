@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useMotionValueEvent, useScroll } from "framer-motion";
 import { useEffect, useState } from "react";
 import styles from "./Header.module.css";
 
@@ -22,12 +21,22 @@ const serviceLinks = [
 export function Header() {
   const [open, setOpen] = useState(false);
   const [elevated, setElevated] = useState(false);
-  const { scrollY } = useScroll();
   const pathname = usePathname();
 
-  useMotionValueEvent(scrollY, "change", (y) => {
-    setElevated(y > 12);
-  });
+  useEffect(() => {
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        setElevated(window.scrollY > 12);
+        ticking = false;
+      });
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     if (!open) return;

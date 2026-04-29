@@ -184,7 +184,7 @@ export function PricingSection() {
                 ))}
               </ul>
               <motion.a
-                href="#contact"
+                href="/contact"
                 className={`btn ${p.highlight ? "btn-dark" : "btn-dark"} ${styles.buy}`}
                 whileTap={{ scale: 0.98 }}
               >

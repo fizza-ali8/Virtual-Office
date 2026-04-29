@@ -41,6 +41,22 @@
   gap: 0.55rem;
 }
 
+.trustBar {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.trustItem {
+  border: 1px solid rgba(10, 10, 10, 0.1);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.88);
+  padding: 0.72rem 0.8rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
 .chip {
   padding: 0.42rem 0.72rem;
   border-radius: 999px;
@@ -74,6 +90,12 @@
   gap: 1rem;
 }
 
+.grid4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
 .card {
   border: 1px solid rgba(10, 10, 10, 0.09);
   border-radius: 18px;
@@ -99,6 +121,14 @@
   margin: 0;
   color: var(--gray-600);
   line-height: 1.68;
+}
+
+.proof {
+  margin: 0.6rem 0 0;
+  color: #394150;
+  font-size: 0.9rem;
+  border-left: 3px solid rgba(255, 214, 10, 0.7);
+  padding-left: 0.55rem;
 }
 
 .cardLink {
@@ -152,6 +182,71 @@
 
 .list li + li {
   margin-top: 0.35rem;
+}
+
+.stepGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.stepCard {
+  border: 1px solid rgba(10, 10, 10, 0.09);
+  border-radius: 16px;
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgba(10, 10, 10, 0.05);
+}
+
+.stepNumber {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 999px;
+  background: rgba(255, 214, 10, 0.24);
+  border: 1px solid rgba(255, 214, 10, 0.7);
+  display: inline-grid;
+  place-items: center;
+  font-weight: 800;
+  margin-bottom: 0.45rem;
+}
+
+.quoteGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.quoteCard {
+  border: 1px solid rgba(10, 10, 10, 0.09);
+  border-radius: 16px;
+  background: linear-gradient(180deg, #fff, #fffdf7);
+  padding: 1rem;
+}
+
+.quoteText {
+  margin: 0;
+  color: #2a3342;
+  line-height: 1.65;
+  font-weight: 500;
+}
+
+.quoteMeta {
+  margin: 0.45rem 0 0;
+  color: #606a78;
+  font-size: 0.88rem;
+}
+
+.focusCard {
+  border: 1px solid rgba(10, 10, 10, 0.1);
+  border-radius: 18px;
+  background: #fff;
+  padding: 1.2rem 1.1rem;
+  box-shadow: 0 10px 24px rgba(10, 10, 10, 0.06);
+}
+
+.focusPrice {
+  margin: 0.25rem 0 0.35rem;
+  font-size: clamp(1.45rem, 2.6vw, 2rem);
 }
 
 .ctaRow {
@@ -274,14 +369,32 @@
     grid-template-columns: 1fr 1fr;
   }
 
+  .grid4 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .trustBar {
+    grid-template-columns: 1fr;
+  }
+
+  .stepGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .faqGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .quoteGrid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 700px) {
   .grid2,
-  .grid3 {
+  .grid3,
+  .grid4,
+  .stepGrid {
     grid-template-columns: 1fr;
   }
 }
